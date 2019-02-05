@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>jQuery Notify v0.3</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="jquery.notify.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function($) {
+				$("button").click(function() {
+					console.log($(this).attr("class"));
+					$.notify($(this).attr("class"), "This is a manual activate example using the short form!");
+				});
+				$.notify({
+					type: "error",
+					text: "This is a automatic example using the long form!",
+					close: true
+				});
+			});
+		</script>
+		<style type="text/css">
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 0 auto;
+			}
+			button {
+				border: 1px solid #EEE;
+				cursor: pointer;
+				padding: 10px 20px;
+			}
+			button.shout {
+				background: #F8FE65;
+				color: #333;
+			}
+			button.error {
+				background: #FE3D26 ;
+				color: #FCFCFC;
+			}
+			button.success {
+				background: #67A05F;
+				color: #FCFCFC;
+			}
+		</style>
+		<link rel="stylesheet" href="jquery.notify.css" type="text/css" media="screen" />
+    </head>
+    <body>
+		<div id="notify"></div>
+		<h1>jQuery Notify</h1>
+		<p>Provides a simple and easy way to insert notification messages using jQuery.</p>
+		<p>Select one of the buttons to set jQuery Notify in action.</p>
+		<button class="shout">Shout</button>
+		<button class="success">Success</button>
+		<button class="error">Error</button>
+    </body>
+</html>
